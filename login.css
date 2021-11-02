@@ -19,8 +19,6 @@ body{
     margin: 18px;
     margin-right: 317px;
 }
-
-/*mudança de logo01*/
 .imagelogo {
     height: 50px;
     width: 50px;
@@ -30,25 +28,6 @@ body{
     visibility: hidden;
     opacity: 1;
 }
-
-/*mudança de logo02*/
-.imagelogo2 {
-    height: 49px;
-    width: 31px;
-    margin: 10px -75px 0px -10px;
-}
-.container .imagelogo2 {
-    visibility: hidden;
-    opacity: 0;
-    position:absolute;
-    top:0;
-    left:0;
-}
-.container:hover .imagelogo2 {
-    visibility: visible;
-    opacity: 1;
-}
-
 .btn_cadastre {
     background-color: #FFFF;
     color: #747272;
@@ -91,9 +70,9 @@ body{
 a:hover{
     color: #A8E6CF;
 }
-/* BANNER */
 
-.banner{
+/* TELA LOGIN */
+.banner_login{
     background-color: #fff;
     border: 3px solid  #FF8B94;
     height: 436px;
@@ -104,17 +83,17 @@ a:hover{
     display: flex;
     box-shadow: 1px 1px 6px;
 }
-.banner form{
+.banner_login form{
     margin: -65px;
 }
-.banner .container{
+.banner_login .container{
     margin: 85px;
     text-align: center;
     flex-direction: column; 
     display: flex;
     position: relative;
 }
-.banner .container input{
+.banner_login .container input{
     border-radius: 10px;
     border: 1px;
     width: 200px;
@@ -122,8 +101,6 @@ a:hover{
     margin: 0 auto;
     border: 3px solid  #A8E6CF;
 }
-
-
 .btn_entrar{
     margin: 20px;
     background-color: #fff;
@@ -139,12 +116,13 @@ a:hover{
     background-color: #FF8B94;
     color: #747272;
 }
-.banner .container .login{
+.banner_login .container .login{
     font-size: 50px;
     font-weight: lighter;
     color: #D3BEDD;
+    margin: 20px 6px;
 }
-.banner .container label{
+.banner_login .container label{
     margin: -25px 0 30px 0;
     color: #747272;
 }
@@ -160,6 +138,10 @@ a:hover{
     font-size: 18px!important;
     color: #747272;
 }
+
+
+
+
 
 
 
