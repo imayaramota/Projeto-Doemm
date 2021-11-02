@@ -102,6 +102,7 @@ a:hover{
     align-self:center;
     border-radius: 50px;
     display: flex;
+    box-shadow: 1px 1px 6px;
 }
 .banner form{
     margin: -65px;
@@ -123,7 +124,7 @@ a:hover{
 }
 
 
-.banner .container .btn_entrar{
+.btn_entrar{
     margin: 20px;
     background-color: #fff;
     border: 3px solid  #FF8B94;
@@ -171,7 +172,7 @@ a:hover{
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-between;
 }
 .footer .container{
     display: flex;
@@ -180,11 +181,14 @@ a:hover{
 .footer .container span{
     margin: 1;
     padding: 0;
+    
     font-size: 15px;
 }
 .footer .container img{
     width: 25px;
     height: 25px;
     margin: 15px;
+    color: #747272;
+    float: left;
 }
 
