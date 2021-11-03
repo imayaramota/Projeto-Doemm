@@ -1,0 +1,342 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    font-family: 'Chivo', sans-serif;
+    font-weight: 300;
+}
+*{
+    z-index: 1;
+}
+
+/*NAV BAR*/
+
+.container{
+    width: 80%;
+    margin: 0 auto; 
+    position: relative;
+}
+
+.container span{
+    font-size: 30px;
+    margin: 18px;
+    margin-right: 317px;
+}
+.imagelogo {
+    height: 50px;
+    width: 50px;
+    margin: 10px -80px 0px -20px;
+}
+.container:hover .imagelogo {
+    visibility: hidden;
+    opacity: 1;
+}
+.btn_cadastre {
+    background-color: #FFFF;
+    color: #747272;
+    border: 3px solid  #A8E6CF;
+    height: 28px;
+    width: 120px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #747272;
+   /* height: 38px;*/
+}
+.btn_cadastre:hover{
+    background-color: #A8E6CF;;
+    color: #747272;
+}
+.btn_doar_agora {
+    background-color: #FFFF;
+    color: #747272;
+    border: 3px solid  #A8E6CF;
+    height: 28px;
+    width: 120px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #747272;
+   /* height: 38px;*/
+}
+.btn_doar_agora:hover{
+    background-color: #A8E6CF;;
+    color: #747272;
+}
+
+.header{
+    color: #747272;
+    box-shadow: 13px -5px 10px; 
+    position: sticky; /*position e top faz fixar a navbar*/
+    top: 0;
+    z-index: 2;
+    background-color: #fff;
+}
+.header .container { 
+    display: flex;
+    justify-content: space-between; 
+}
+
+.navbar{
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+}
+.header a{ 
+    text-decoration: none;
+    color: #747272;
+}
+a:hover{
+    color: #A8E6CF;
+}
+
+
+/*TELA INDEX*/
+.index_body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+}
+.banner_index{
+    box-shadow: 2px 2px 4px #747272;
+    overflow: hidden;
+    height: 500px;
+    width: 1353px;
+    margin-top: -113px;
+}
+.container_carrosel{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0);
+}
+.container_carrosel img{
+    /* object-fit: cover; */
+    height: 500px;
+    max-width: auto;
+}
+.banner_text{
+    background-color: #fff;
+    height: 692px;
+    width: 836px;
+    /* margin: 83px 254px 104px 427px; */
+    margin-bottom: 10px;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    /* align-self:center;*/
+    /* display: flex;  */
+}
+.titulo_index{
+    color: #D3BEDD ;
+    font-size: 80px;
+    font-weight:300;
+    margin-top: -115px
+}
+.banner_text .subtitulo01{
+    color: #A8E6CF ;
+    font-size: 40px;
+    font-weight:500;
+}
+.banner_text .subtitulo02{
+    color: #D3BEDD ;
+    font-size: 40px;
+    font-weight:500;
+}
+.banner_text .text{
+    text-align: justify;
+}
+.banner_text button{
+    background-color: #FFFF;
+    border: 3px solid  #A8E6CF;
+    height: 30px;
+    width: 120px;
+    border-radius: 10px;
+    color: #747272;
+    margin: 0 auto;
+    box-shadow: 2px 2px 5px #747272;
+}
+.banner_text button:hover{
+    background-color:  #A8E6CF;
+    color: #747272;
+}
+
+/* TELA INSTITUIÇÕES*/
+.banner_instituicao{
+    background-color: #fff;
+    height: 692px;
+    width: 1433px;
+    margin-bottom: 10px;
+    /* justify-content: center;
+    text-align: center; */
+    margin: 0 auto   
+}
+.titulo{
+    color: #D3BEDD ;
+    font-size: 80px;
+    font-weight: 300;
+    text-align: center;
+}
+.titulo02{
+    color:  #A8E6CF;
+    text-align: left;
+    font-size: 40px;
+    font-weight: 300;
+}
+.text_instituicao{
+    text-align: justify;
+}
+
+/*TELA SUA DOAÇÃO*/
+.banner_sua_doacao{
+    background-color: #fff;
+    height: 1693px;
+    width: 1433px;
+    margin-bottom: 10px;
+    /* justify-content: center;
+    text-align: center; */
+    margin: 0 auto   
+}
+.banner_sua_doacao img{
+    width: 300px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    margin: 11px 0 0 72px;
+}
+
+/*TELA DOAR AGORA*/
+.banner_doar_agora{
+    background-color: #fff;
+    height: 434px;
+    width: 1000px;
+    margin-bottom: 10px;
+    /* justify-content: center; */
+    /* text-align: center; */
+    margin: 0 auto   
+}
+.banner_doar_agora .container label{
+    margin: -25px 0 30px 0;
+    color: #747272;
+}
+.btn_doar{
+    margin: 20px;
+    background-color: #fff;
+    border: 3px solid  #FF8B94;
+    height: 28px;
+    width: 80px;
+    border-radius: 10px;
+    color: #747272;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.btn_doar:hover{
+    background-color: #FF8B94;
+    color: #747272;
+}
+
+
+
+/* TELA LOGIN */
+.banner_login{
+    background-color: #fff;
+    border: 3px solid  #FF8B94;
+    height: 374px;
+    width: 643px;
+    margin: 97px 254px 104px 427px;
+    align-self:center;
+    border-radius: 50px;
+    display: flex;
+    box-shadow: 1px 1px 6px;
+}
+.banner_login form{
+    margin: -65px;
+}
+.banner_login .container{
+    margin: 85px;
+    text-align: center;
+    flex-direction: column; 
+    display: flex;
+    position: relative;
+}
+.banner_login .container input{
+    border-radius: 10px;
+    border: 1px;
+    width: 200px;
+    height: 26px;
+    margin: 0 auto;
+    border: 3px solid  #A8E6CF;
+}
+.btn_entrar{
+    margin: 20px;
+    background-color: #fff;
+    border: 3px solid  #FF8B94;
+    height: 28px;
+    width: 80px;
+    border-radius: 10px;
+    color: #747272;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.btn_entrar:hover{
+    background-color: #FF8B94;
+    color: #747272;
+}
+.banner_login .container .login{
+    font-size: 50px;
+    font-weight: lighter;
+    color: #D3BEDD;
+    margin: 20px 6px;
+}
+.banner_login .container label{
+    margin: -25px 0 30px 0;
+    color: #747272;
+}
+.container .img_login{
+    margin: 90px 0px 0px 0px;
+    margin-left: -117px;
+    position: absolute;
+    height: 430px; 
+}
+.container .form {
+    margin-right: 140px;
+    margin-bottom: 0px;
+    font-size: 18px!important;
+    color: #747272;
+}
+
+
+
+
+
+
+
+
+/* FOOTER */
+
+.footer{
+    background-color: #A8E6CF;
+    height: 70px;
+    color: #747272;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.footer .container{
+    display: flex;
+    justify-content: left;
+}
+.footer .container span{
+    margin: 1;
+    padding: 0;
+    
+    font-size: 15px;
+}
+.footer .container img{
+    width: 25px;
+    height: 25px;
+    margin: 15px;
+    color: #747272;
+    float: left;
+}
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XXXX - Index </title>
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="shortcut icon" href="./images/image 17.png" type="image/x-icon">
+    
+    <link rel = "preconnect" href = "https://fonts.googleapis.com">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
+
+    <link href = "https://fonts.googleapis.com/css2?family=Chivo:wght@300&display=swap" rel ="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <!-- <img src=" " alt="imagem logo " class="imagelogo"> -->
+            
+            <span>XXXX</span>
+            <ul class="navbar">
+                <li class="selecionado"> HOME </li>
+                <li> <a href="./instituicoes.html"> INSTITUIÇÕES </a> </li>
+                <li> <a href="#"> <button onclick="cadastre()" class="btn_cadastre"> CADASTRE-SE </button></a></li>
+                <li> <a href="./login.html"> LOGIN </a></li>
+            </ul>
+        </div> 
+    </div>
+
+    <div class="index_body">
+        <div class="banner_index">
+            <div class="container_carrosel" id="img">
+                <img src="https://cdn.v2v.net/600x315/54078c5e-a097-4154-bbd7-59d4fbcda367.jpg?v=63734838666" alt="imagm crianças">
+                <img src="https://doe1hora.org/wp-content/uploads/2019/08/ajudar-as-pessoas-2.jpg" alt="imagm crianças">
+                <img src="http://difusora890.com.br/wp-content/uploads/2020/10/WhatsApp-Image-2020-10-10-at-08.46.12-2.jpeg" alt="imagm crianças">
+                <img src="https://www.believenews.com.br/wp-content/uploads/2019/11/larm-rmah-AEaTUnvneik-unsplash-1210x642.jpg" alt="imagm crianças">
+                <img src="https://yrizaceinveoniyaninusge.i-mpr.com/0=MmMiVmY1ojci5SbvNmLvRWY6lGbhJ2bsdGQz9Gdh1mLu9GdsVmOwkTN5ITMzATNzozZlBnauUzN5kjNyIWY2MjYlNmMmNmZ3ADO4kjMzkDM2gDOmJmZGJTJmJmZGJTJzUjNxYkMlQTN2ETMf1SNx0yXt92YuIHct1SaGJTJGJTJBNTJwRHdopTM" alt="imagem crianças">
+            </div>
+         </div>
+    </div>
+    <div class="banner_text">
+        <h1 class="titulo_index">O QUE É A XXXXX</h1>
+        <p class="text">A XXXXX é uma e empresa sem fins lucrativos criada para auxuiliar doadores e automatizar a gestão de ONGS que sobrevivem de doações.
+             Com a XXXX você realiza doaçõe e consgue ver para aonde a sua doação está sendo direcionada, tudo diretamente pela plataforma.</p>
+             
+        <h3 class="subtitulo01">Qual a importancia da doação?</h3> 
+        <p class="text">Talvez para você doador R$ 1.00, 50.00 ou até mais que isso não seja nada, mas para crianças que muitas vezes não possui o basico para 
+            sua propria higiene, alimentação e/ou até mesmo para se vestir tendo muitas vezes que passar frio, a sua doação muitas vezes salva a 
+            vida deles. As doações auxiliam as Instituições a sempre terem  um  espaço agradavel e desejavel de se estar, além da importancia para 
+            cuidados basicos a  doacao auxilia na demostracao de carinho, amor, pertencentes de algum lugar entre outras diversas coisas.
+            Seja um doador, mude a vida de inumeras criancas com o valor que voce puder, faça parte de um projeto que prioriza e valoria 
+            crianças carentes e que são muito amadas e importantes para a Instituçao e seus volunatrios.</p>
+        
+        <h3 class="subtitulo02">MUDE AGORA A VIDA DE ALGUÉM!</h3>
+        <button onclick="doar_agora()">DOAR, AGORA!</button>
+    </div>
+   
+    <div class="footer">
+        <div class="container">
+            <span>Todos os direitos reservados a XXX ©2021 </span>
+            <!-- <img src="./facebook-square-brands.svg" alt="logo instagram" >
+            <img src="./instagram-brands.svg " alt="logo facebook" >
+            <img src="./twitter-brands.svg " alt="logo twitter" >
+            <img src="./linkedin-brands.svg " alt="logo linkedIn" > -->
+        </div>
+    </div>
+
+</body>
+</html>
+<script>
+    const imgs = document.getElementById("img");
+    const img = document.querySelectorAll("#img img");
+
+    let idx = 0;
+
+    function carrosel(){
+        idx++;
+
+        if (idx > img.length - 1) {
+            idx = 0;
+        }
+
+        imgs.style.transform = `translateX(${-idx * 500}px)`;
+    }
+
+    setInterval(carrosel, 1800)
+</script>
