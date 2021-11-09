@@ -14,7 +14,7 @@
 
     <link href = "https://fonts.googleapis.com/css2?family=Chivo:wght@300&display=swap" rel ="stylesheet">
 </head>
-<body>
+
     <div class="header">
         <div class="container">
             <!-- <img src=" " alt="imagem logo " class="imagelogo"> -->
@@ -29,41 +29,54 @@
         </div> 
     </div>
 
+<div style="display: block;">
     <div class="banner_doar_agora">
         <div class="container">
-            <form action="">
                 <h1 class="titulo">VAMOS DOAR?</h1>
-                <label> Seja um adoador ativo!!</label>
+                <p> Seja um adoador ativo!!</p>
+            <form action="doar_agora" class="form_doar_agora">
+                <!-- <div class="row"> -->
+                    <label>Valor que deseja doar:
+                        <input id="ipt_valor" class="ipt_valor" type="text" placeholder="R$xxxx.yy">
+                    </label> 
     
-                <p class="form">Valor que deseja doar:</p> 
-                <input id="ipt_valor" type="text" placeholder="R$xxxx.yy">
-
-                <p class="form">Tipo de doação:</p> 
-                <select name="" id="">
-                    <option value="">Selecione</option>
-                    <option value="tipo_mensal">Mensal</option>
-                    <option value="tipo_semestral">Semestral</option>
-                    <option value="tipo_anual">Anual</option>
-                </select>
-
-                <p class="form">Instituição de doação:</p> 
-                <select name="" id="instituicao">
-                    <option value="">Selecione</option>
-                    <option value="inst_dara">Instituto Dara</option>
-                    <option value="inti_abas">Creché ABAS</option>
-                </select>
-                
-                <button onclick="entrar()" class="btn_doar"> Doar </button>
+                    <label>Tipo de doação:
+                        <select name="" id="tipo_doacao" onclick="">
+                            <option value="">Selecione</option>
+                            <option value="tipo_mensal">Mensal</option>
+                            <option value="tipo_semestral">Semestral</option>
+                            <option value="tipo_anual">Anual</option>
+                        </select>
+                    </label> 
+    
+                    <label>Instituição de doação:
+                        <select name="" id="instituicao" onclick="">
+                            <option value="">Selecione</option>
+                            <option value="inst_dara">Instituto Dara</option>
+                            <option value="inti_abas">Creché ABAS</option>
+                        </select> 
+                    </label> 
+                <!-- </div> -->
             </form>
-
         </div>
     </div>
+    <div class="div_botao">
+       <button onclick="entrar()" class="btn_doar"> Doar, agora! </button>
+    </div>
+</div>
 
+<div style="display: none;">
+        <div class="banner_extrato">
+            <div class="container">
+                <h1>EXTRARTO DA DOAÇÃO?</h1>
+                <p>Valor doado:</p>
+                <p>Tipo de doação:</p>
+                <p>Instituição:</p>
+                <p>Muito obrigado(a) pela singela doação nós e todas as crianças agradecemos!!</p>
+            </div>
+    </div>
 
-
-
-
-
+</div>
 
     <div class="footer">
         <div class="container">

@@ -192,9 +192,9 @@ a:hover{
     height: 1693px;
     width: 1433px;
     margin-bottom: 10px;
-    /* justify-content: center;
-    text-align: center; */
-    margin: 0 auto   
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto; 
 }
 .banner_sua_doacao img{
     width: 300px;
@@ -207,31 +207,91 @@ a:hover{
 /*TELA DOAR AGORA*/
 .banner_doar_agora{
     background-color: #fff;
-    height: 434px;
-    width: 1000px;
+    height: 438px;
+    width: 1512px;
     margin-bottom: 10px;
     /* justify-content: center; */
     /* text-align: center; */
     margin: 0 auto   
 }
-.banner_doar_agora .container label{
-    margin: -25px 0 30px 0;
+.banner_doar_agora .form_doar_agora{
+    margin: 11px 0 5px 0;
+    padding: 40px;
+}
+.banner_doar_agora .container p{
+    margin-bottom: -98px;
     color: #747272;
+    font-size: 30px;
+    text-align: center;
+}
+.banner_doar_agora .container .titulo{
+    color: #D3BEDD;
+    font-size: 80px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 10px;
 }
 .btn_doar{
-    margin: 20px;
     background-color: #fff;
     border: 3px solid  #FF8B94;
-    height: 28px;
-    width: 80px;
     border-radius: 10px;
     color: #747272;
-    margin: 0 auto;
-    margin-top: 20px;
+    font-size: 24px;
 }
 .btn_doar:hover{
     background-color: #FF8B94;
     color: #747272;
+}
+.form_doar_agora input{
+    border-radius: 10px;
+    width: 120px;
+    height: 26px;
+    border: 3px solid  #A8E6CF;
+    display: block;
+}
+.container .form_doar_agora{
+    margin: 103px 10px 17px 211px;
+    text-align: center;
+    flex-direction: row; 
+    display: flex;
+    position: relative;
+}
+.form_doar_agora select{
+    width: 120px;
+    height: 26px;
+    border-radius: 8px;
+    border: 3px solid  #A8E6CF;
+    display: block;
+}
+.form_doar_agora label{
+    margin: 30px;
+    font-size: 20px;
+}
+.div_botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 52px;
+}
+.banner_extrato {
+        background-color: #fff;
+        border: 3px solid  #FF8B94;
+        height: 373px;
+        width: 730px;
+        margin: 97px 254px 104px 427px;
+        align-self:center;
+        border-radius: 50px;
+        display: flex;
+        box-shadow: 1px 1px 6px;
+} 
+.banner_extrato h1{
+    color: #D3BEDD ;
+    font-size: 51px;
+    font-weight: 300;
+    text-align: center;
+} 
+.banner_extrato p{
+    font-size: 20px;
 }
 
 
