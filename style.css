@@ -294,6 +294,64 @@ a:hover{
     font-size: 20px;
 }
 
+/* TELA CADASTRO*/
+.banner_cadastro{
+    background-color: #fff;
+    height: 374px;
+    width: 643px;
+    margin: 42px 254px 104px 427px;
+    align-self:center;
+    display: flex;
+}
+.banner_cadastro .container{
+    margin: 85px;
+    text-align: center;
+    flex-direction: column; 
+    display: flex;
+    position: relative;
+}
+.banner_cadastro .container input{
+    border-radius: 10px;
+    border: 1px;
+    width: 200px;
+    height: 26px;
+    margin: 0 auto;
+    border: 3px solid  #A8E6CF;
+}
+.btn_cadastar{
+    margin: 20px;
+    background-color: #fff;
+    border: 3px solid  #FF8B94;
+    height: 28px;
+    width: 80px;
+    border-radius: 10px;
+    color: #747272;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.btn_cadastar:hover{
+    background-color: #FF8B94;
+    color: #747272;
+}
+.banner_cadastro p{
+    font-size: 50px;
+    font-weight: lighter;
+    color: #D3BEDD;
+    margin: 20px 6px;
+}
+/* .banner_cadastro form{
+    margin: -65px;
+} */
+.banner_cadastro label{
+    margin: -25px 0 30px 0;
+    color: #747272;
+}
+
+
+
+
+
+
 
 
 /* TELA LOGIN */
