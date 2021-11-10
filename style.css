@@ -277,8 +277,8 @@ a:hover{
         background-color: #fff;
         border: 3px solid  #FF8B94;
         height: 373px;
-        width: 730px;
-        margin: 97px 254px 104px 427px;
+        width: 926px;
+        margin: 97px 254px 104px 357px;
         align-self:center;
         border-radius: 50px;
         display: flex;
@@ -293,6 +293,10 @@ a:hover{
 .banner_extrato p{
     font-size: 20px;
 }
+.banner_extrato span{
+    font-size: 20px;
+}
+
 
 /* TELA CADASTRO*/
 .banner_cadastro{

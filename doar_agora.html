@@ -29,7 +29,7 @@
         </div> 
     </div>
 
-<div style="display: block;">
+<div id="tela01" style="display: block;">
     <div class="banner_doar_agora">
         <div class="container">
                 <h1 class="titulo">VAMOS DOAR?</h1> 
@@ -42,18 +42,18 @@
     
                     <label>Tipo de doação:
                         <select name="" id="tipo_doacao" onclick="">
-                            <option value="">Selecione</option>
-                            <option value="tipo_mensal">Mensal</option>
-                            <option value="tipo_semestral">Semestral</option>
-                            <option value="tipo_anual">Anual</option>
+                            <option value=''>Selecione</option>
+                            <option value="Mensal">Mensal</option>
+                            <option value="Semestral">Semestral</option>
+                            <option value="Anual">Anual</option>
                         </select>
                     </label> 
     
                     <label>Instituição de doação:
                         <select name="" id="instituicao" onclick="">
-                            <option value="">Selecione</option>
-                            <option value="inst_dara">Instituto Dara</option>
-                            <option value="inti_abas">Creché ABAS</option>
+                            <option value=''>Selecione</option>
+                            <option value="Instituto Dara">Instituto Dara</option>
+                            <option value="Creché ABAS">Creché ABAS</option>
                         </select> 
                     </label> 
                 <!-- </div> -->
@@ -61,32 +61,78 @@
         </div>
     </div>
     <div class="div_botao">
-       <button onclick="entrar()" class="btn_doar"> Doar, agora! </button>
+       <button onclick="doar_agora()" class="btn_doar"> Doar, agora! </button>
     </div>
 </div>
 
-<div style="display: none;">
+<div id="tela02" style="display: none;">
         <div class="banner_extrato">
             <div class="container">
-                <h1>EXTRARTO DA DOAÇÃO?</h1>
-                <p>Valor doado:</p>
-                <p>Tipo de doação:</p>
-                <p>Instituição: </p>
+                <h1>EXTRATO DA DOAÇÃO?</h1>
+                <p>Valor doado:<span id="msg_valor_doado"></span></p>
+                <p>Tipo de doação:<span id="msg_tipo" ></span></p>
+                <p>Instituição:<span id="msg_instituicao" ></span></p>
                 <p>Muito obrigado(a) pela singela doação nós e todas as crianças agradecemos!!</p>
             </div>
     </div>
 
 </div>
 
-    <div class="footer">
-        <div class="container">
-            <span>Todos os direitos reservados a XXX ©2021 </span>
-            <!-- <img src="./facebook-square-brands.svg" alt="logo instagram" >
+<div class="footer">
+    <div class="container">
+        <span>Todos os direitos reservados a XXX ©2021 </span>
+        <div class="div_img_footer">
+            <img src="./facebook-square-brands.svg" alt="logo instagram" >
             <img src="./instagram-brands.svg " alt="logo facebook" >
             <img src="./twitter-brands.svg " alt="logo twitter" >
-            <img src="./linkedin-brands.svg " alt="logo linkedIn" > -->
+            <img src="./linkedin-brands.svg " alt="logo linkedIn" >
         </div>
     </div>
+</div>
 
 </body>
 </html>
+<script>
+    function doar_agora() {
+        var valor = Number (ipt_valor.value);
+
+        if (valor == '') {
+            alert('Digite um valor para doar!');
+        }
+        else if (tipo_doacao.value == '') {
+            alert('Selecione um tipo de doação!');
+        }
+        else if (instituicao.value == '') {
+            alert('Selecione uma instituição para a doação!');
+        }
+        else {
+            if (tipo_doacao.value == 'Mensal') {
+                tela01.style.display='none';
+                tela02.style.display='block';
+                msg_valor_doado.innerHTML = `<b>R$${valor.toFixed(2)} </b>`;
+                msg_tipo.innerHTML = `<b>${tipo_doacao.value} </b>`;
+                msg_instituicao.innerHTML = `<b>${instituicao.value} </b>`;
+            }
+            else if (tipo_doacao.value == 'Semestral') {
+                tela01.style.display='none';
+                tela02.style.display='block';
+
+                ax_valor = valor * 6;
+
+                msg_valor_doado.innerHTML = `<b>R$${ax_valor.toFixed(2)} 6x de R$ ${valor.toFixed(2)} </b>`;
+                msg_tipo.innerHTML = `<b>${tipo_doacao.value} </b>`;
+                msg_instituicao.innerHTML = `<b>${instituicao.value} </b>`;
+            }
+            else if (tipo_doacao.value == 'Anual') {
+                tela01.style.display='none';
+                tela02.style.display='block';
+                
+                axx_valor = valor * 12;
+
+                msg_valor_doado.innerHTML = `<b>R$${axx_valor.toFixed(2)} 12x de R$ ${valor.toFixed(2)} </b>`;
+                msg_tipo.innerHTML = `<b>${tipo_doacao.value} </b>`;
+                msg_instituicao.innerHTML = `<b>${instituicao.value} </b>`;
+            }
+        }
+    }
+</script>
