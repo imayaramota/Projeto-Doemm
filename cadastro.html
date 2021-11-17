@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XXXX - Login </title>
+    <title>XXXX - Cadastro </title>
     <link rel="stylesheet" href="./style.css">
 
     <link rel="shortcut icon" href="./images/image 17.png" type="image/x-icon">
@@ -33,27 +33,39 @@
         <div class="container">
                 <p>CADASTRO</p>
                 <label class="sub1">Deseja ser um doardor? Cadastre-se já!</label>
-            <form action="">
-                <label>Nome completo:</label> 
-                <input id="ipt_nome" type="text" placeholder="Maria Matos">
+            <div id="form_cadastro" class="form_cadastro">
+               <div>
+                    <div class="div_left">
+                    
+                        <label>Nome completo:</label> 
+                        <input id="ipt_nome" type="text" placeholder="Maria Matos">
+                        
+                        <label>Email:</label> 
+                        <input id="ipt_email" type="text" placeholder="xxx@yy.com">
+        
+                        <label>Senha:</label> 
+                        <input id="ipt_senha" type="password" style="-webkit-text-security:circle" placeholder="********" >
+
+                    </div>
+
+                    <div class="div_right">
+                        
+                        <label>CPF:</label> 
+                        <input id="ipt_cpf" type="text" placeholder="xxx.xxx.xxx-xx">
+        
+        
+                        <label>Celular:</label> 
+                        <input id="ipt_celular" type="text" placeholder="(99) 99999-9999">
+        
+                        <label>Confirmação da senha:</label> 
+                        <input id="ipt_senha" type="password" style="-webkit-text-security:circle" placeholder="********" >
+
+                    </div>
+               </div>
                 
-                <label>CPF:</label> 
-                <input id="ipt_cpf" type="text" placeholder="xxx.xxx.xxx-xx">
-
-                <label>Email:</label> 
-                <input id="ipt_email" type="text" placeholder="xxx@yy.com">
-
-                <label>Celular:</label> 
-                <input id="ipt_celular" type="text" placeholder="(99) 99999-9999">
-                
-                <label>Senha:</label> 
-                <input id="ipt_senha" type="password" style="-webkit-text-security:circle" placeholder="********" ><br>
-
-                <label>Confirmação da senha:</label> 
-                <input id="ipt_senha" type="password" style="-webkit-text-security:circle" placeholder="********" ><br>
 
                 <a href="#"><button onclick="entrar()" class="btn_cadastar"> Cadastrar </button></a>
-            </form>
+            </div>
         </div>
     </div>
 
