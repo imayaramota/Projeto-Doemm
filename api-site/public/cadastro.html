@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XXXX - Cadastro </title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Doem | Cadastro </title>
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <script src="./js/funcoes.js"></script>
 
-    <link rel="shortcut icon" href="./images/image 17.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/image 4.png" type="image/x-icon">
     
     <link rel = "preconnect" href = "https://fonts.googleapis.com">
     <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
@@ -17,9 +19,7 @@
 <body>
     <div class="header">
         <div class="container">
-            <!-- <img src=" " alt="imagem logo " class="imagelogo"> -->
-            
-            <span>XXXX</span>
+            <img src="./images/image 3.png " alt="imagem logo " class="imagelogo">
             <ul class="navbar">
                 <li> <a href="./index.html"> HOME </a></li>
                 <li> <a href="./instituicoes.html"> INSTITUIÇÕES </a> </li>
@@ -51,33 +51,159 @@
                     <div class="div_right">
                         
                         <label>CPF:</label> 
-                        <input id="ipt_cpf" type="text" placeholder="xxx.xxx.xxx-xx">
+                        <input id="ipt_cpf" type="text" placeholder="xxx.xxx.xxx-xx" >
         
         
                         <label>Celular:</label> 
                         <input id="ipt_celular" type="text" placeholder="(99) 99999-9999">
         
                         <label>Confirmação da senha:</label> 
-                        <input id="ipt_senha" type="password" style="-webkit-text-security:circle" placeholder="********" >
+                        <input id="ipt_senha_confirmacao" type="password" style="-webkit-text-security:circle" placeholder="********" >
 
                     </div>
                </div>
                 
 
-                <a href="#"><button onclick="entrar()" class="btn_cadastar"> Cadastrar </button></a>
+                <button onclick="cadastrar()" class="btn_cadastar"> Cadastrar </button>
+            </div>
+            <!-- <div id="div_aguardar" class="loading-div">
+                <img src="./assets/circle-loading.gif" id="loading-gif">
+            </div> -->
+
+            <div id="div_erros_login">
+
             </div>
         </div>
     </div>
-
+    
     <div class="footer">
         <div class="container">
             <span>Todos os direitos reservados a XXX ©2021 </span>
-            <!-- <img src="./facebook-square-brands.svg" alt="logo instagram" >
-            <img src="./instagram-brands.svg " alt="logo facebook" >
-            <img src="./twitter-brands.svg " alt="logo twitter" >
-            <img src="./linkedin-brands.svg " alt="logo linkedIn" > -->
+            <div class="div_img_footer">
+                <img src="./images/instagram.png" alt="logo instagram" >
+                <img src="./images/logotipo-do-aplicativo-do-facebook.png" alt="logo facebook" >
+                <img src="./images/whatsapp (1).png" alt="logo WhatsApp" >
+                <img src="./images/twitter.png " alt="logo twitter" >
+                <img src="./images/logotipo-do-linkedin.png" alt="logo linkedIn" >
+            </div>
         </div>
     </div>
 
 </body>
 </html>
+<script src="./inputmask/dist/inputmask.js"></script>
+<script>
+    // import InputMask from "inputmask"
+
+        //DERTERMINA O ID QUE IRÁ RECEBER A MASCARA
+        var telefone = document.getElementById("ipt_celular");
+        var cpf = document.getElementById("ipt_cpf");
+        //DETERMINAR A MASCARA
+        var mascara_tel = new Inputmask("(99)99999-9999");
+        var mascara_cpf = new Inputmask("999.999.999-99");
+        //DETERMINA A MASCARA QUE IRA SER INCLUSA NO ID
+        mascara_tel.mask(telefone);    
+        mascara_cpf.mask(cpf);      
+    
+
+    function cadastrar() {
+        // aguardar();
+
+        var nomeVar = ipt_nome.value;
+        var celularVar = ipt_celular.value;
+        var emailVar = ipt_email.value;
+        var cpfVar = ipt_cpf.value;
+        var senhaVar = ipt_senha.value;
+        var confirmacaoSenhaVar = ipt_senha_confirmacao.value;
+
+        if (nomeVar == "" ||  celularVar == "" || emailVar == "" || cpfVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" ) {
+
+            window.alert("Preencha todos os campos para prosseguir!");
+            if (nomeVar == "") {
+                console.log('nome está em branco')
+            }
+            if (celularVar == "") {
+                console.log('celular está em branco')
+            }
+            if (emailVar == "") {
+                console.log('email está em branco')
+            }
+            if (cpfVar == "") {
+                console.log('celular está em branco')
+            }
+            if (senhaVar == "") {
+                console.log('senha está em branco')
+            }
+            if (confirmacaoSenhaVar == "") {
+                console.log('confirmacaoSenha está em branco')
+            }
+            // finalizarAguardar();
+            return false;
+        }
+
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            // finalizarAguardar();
+            return false;
+        }
+        if (cpfVar == "000.000.000-00" || 
+        cpfVar == "111.111.111-11" || 
+        cpfVar == "222.222.222-22" || 
+        cpfVar == "333.333.333-33" || 
+        cpfVar == "444.444.444-44" || 
+        cpfVar == "555.555.555-55" || 
+        cpfVar == "666.666.666-66" || 
+        cpfVar == "777.777.777-77" || 
+        cpfVar == "888.888.888-88" || 
+        cpfVar == "999.999.999-99"){
+            alert ('Cpf inválido!');
+            ipt_cnpj.focus();
+            ipt_cnpj.value='';
+            return false;
+        }
+        if(senhaVar.length < 6){
+            alert("A senha deve conter no minímo 6 digitos!");
+            ipt_senha.focus();
+            ipt_senha.value='';
+            ipt_senha_confirmacao.value='';
+            return false;
+        }
+        if (senhaVar != confirmacaoSenhaVar) {
+            window.alert("As senhas inseridas devem ser iguais para prosseguir!");
+            // finalizarAguardar();
+            return false;
+        }
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                celularServer: celularVar,
+                cpfServer: cpfVar,
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");
+                window.location = "login.html";
+                limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+
+</script>

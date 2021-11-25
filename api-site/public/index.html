@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XXXX - Index </title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Doem | Index </title>
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <script src="./js/funcoes.js"></script>
 
-    <link rel="shortcut icon" href="./images/image 17.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/image 4.png" type="image/x-icon">
     
     <link rel = "preconnect" href = "https://fonts.googleapis.com">
     <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
 
     <link href = "https://fonts.googleapis.com/css2?family=Chivo:wght@300&display=swap" rel ="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
 </head>
 <body>
     <div class="header">
         <div class="container">
-            <!-- <img src=" " alt="imagem logo " class="imagelogo"> -->
-            
-            <span>XXXX</span>
+            <img src="./images/image 3.png " alt="imagem logo " class="imagelogo">
             <ul class="navbar">
                 <li class="selecionado"> HOME </li>
                 <li> <a href="./instituicoes.html"> INSTITUIÇÕES </a> </li>
@@ -52,19 +54,28 @@
             cuidados basicos a  doacao auxilia na demostracao de carinho, amor, pertencentes de algum lugar entre outras diversas coisas.
             Seja um doador, mude a vida de inumeras criancas com o valor que voce puder, faça parte de um projeto que prioriza e valoria 
             crianças carentes e que são muito amadas e importantes para a Instituçao e seus volunatrios.</p>
+
+            <h3 class="subtitulo01"> Valor da doações arrecadas por mês:</h3> 
+           <center>
+            <div class="graph">
+                <canvas id="myChartBar" width="100%" height="40%"></canvas> <!--<canvas>usado para fazer desenhos-->
+            </div>
+           </center>
+           
         
         <h3 class="subtitulo02">MUDE AGORA A VIDA DE ALGUÉM!</h3>
-        <a href="/.cadastro.html"><button onclick="doar_agora()">DOAR, AGORA!</button></a>
+        <a href="./cadastro.html"><button onclick="doar_agora()">DOAR, AGORA!</button></a>
     </div>
    
     <div class="footer">
         <div class="container">
             <span>Todos os direitos reservados a XXX ©2021 </span>
             <div class="div_img_footer">
-                <img src="./facebook-square-brands.svg" alt="logo instagram" >
-                <img src="./instagram-brands.svg " alt="logo facebook" >
-                <img src="./twitter-brands.svg " alt="logo twitter" >
-                <img src="./linkedin-brands.svg " alt="logo linkedIn" >
+                <img src="./images/instagram.png" alt="logo instagram" >
+                <img src="./images/logotipo-do-aplicativo-do-facebook.png" alt="logo facebook" >
+                <img src="./images/whatsapp (1).png" alt="logo WhatsApp" >
+                <img src="./images/twitter.png " alt="logo twitter" >
+                <img src="./images/logotipo-do-linkedin.png" alt="logo linkedIn" >
             </div>
         </div>
     </div>
@@ -88,4 +99,57 @@
     }
 
     setInterval(carrosel, 1800)
+
+
+
+
+    var ctx = document.getElementById('myChartBar').getContext('2d'); /*pega o elemento com id Bar*/
+  var myChartBar = new Chart(ctx, { /*pegeui  um novo grafico*/
+      type: 'bar', /*tipo barra*/
+      data: {
+          labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Maio', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'], /*legendas do grafico*/
+          datasets: [{
+              label: 'Doações por Mês R$', /*titulo*/
+              data: [12, 19, 3, 5, 2, 3, 4, 8, 7, 14, 5, 0], /*inseri aqui os numeros do nosso alerts */ /*isso é um vetor =  lugar aonde tem varias variavies*/
+              backgroundColor: [
+                  '#A8E6CF', /*r=red, g=green, b=blue, a=opacidade */
+                  '#A8E6CF',
+                  '#A8E6CF',
+                  '#A8E6CF',
+                  '#A8E6CF',
+                  '#A8E6CF',
+                  '#A8E6CF',
+                  '#A8E6CF',
+                  '#A8E6CF',
+                  '#A8E6CF',
+                  '#A8E6CF',
+                  '#A8E6CF'
+              ],
+              borderColor: [
+                  '#FFAAA7', /*r=red, g=green, b=blue, a=opacidade */
+                  '#D3BEDD',
+                  '#FFAAA7',
+                  '#D3BEDD',
+                  '#FFAAA7',
+                  '#D3BEDD',
+                  '#FFAAA7',
+                  '#D3BEDD',
+                  '#FFAAA7',
+                  '#D3BEDD',
+                  '#FFAAA7',
+                  '#D3BEDD',
+              ],
+              borderWidth: 3
+          }]
+      },
+      options: {
+        maintainAspectRatio: false, /*isso diz para ele alterar so o width ou so o height, se ficar true ele altera os dois*/
+          scales: {
+              y: {
+                  beginAtZero: true /*grafico começa do zero*/
+              }
+          }
+      }
+  });
+
 </script>

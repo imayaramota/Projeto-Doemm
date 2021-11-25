@@ -24,13 +24,13 @@ body{
 }
 .imagelogo {
     height: 50px;
-    width: 50px;
-    margin: 10px -80px 0px -20px;
+    width: 173px;
+    margin: 5px -80px 0px -20px;
 }
-.container:hover .imagelogo {
+/* .container:hover .imagelogo {
     visibility: hidden;
     opacity: 1;
-}
+} */
 .btn_cadastre {
     background-color: #FFFF;
     color: #747272;
@@ -116,7 +116,7 @@ a:hover{
 }
 .banner_text{
     background-color: #fff;
-    height: 692px;
+    height: 1100px;
     width: 836px;
     /* margin: 83px 254px 104px 427px; */
     margin-bottom: 10px;
@@ -126,6 +126,15 @@ a:hover{
     /* align-self:center;*/
     /* display: flex;  */
 }
+.graph {
+    display: flex;
+    align-items: center;
+    background-color: #eaeaea;
+    width: 85%;
+    height: 35vh;
+    margin: 10px;
+    padding: 5px;
+  }
 .titulo_index{
     color: #D3BEDD ;
     font-size: 80px;
@@ -158,6 +167,7 @@ a:hover{
 .banner_text button:hover{
     background-color:  #A8E6CF;
     color: #747272;
+    transform: translateX(10px) scale(1.2);
 }
 
 /* TELA INSTITUIÇÕES*/
@@ -189,7 +199,7 @@ a:hover{
 /*TELA SUA DOAÇÃO*/
 .banner_sua_doacao{
     background-color: #fff;
-    height: 1693px;
+    height: 1900px;
     width: 1433px;
     margin-bottom: 10px;
     justify-content: center;
@@ -203,6 +213,27 @@ a:hover{
     align-items: center;
     margin: 11px 0 0 72px;
 }
+.banner_sua_doacao .titulo02{
+    color: #FF8B94 ;
+    font-size: 60px;
+    font-weight: 300;
+    text-align: center;
+}
+.banner_sua_doacao .btn_vamos{
+    background-color: #fff;
+    border: 3px solid  #FF8B94;
+    border-radius: 10px;
+    color: #747272;
+    font-size: 24px;
+}
+.btn_vamos:hover{
+    background-color: #FF8B94;
+    color: #747272;
+    transform: translateX(10px) scale(1.2);
+}
+
+
+
 
 /*TELA DOAR AGORA*/
 .banner_doar_agora{
@@ -277,8 +308,8 @@ a:hover{
         background-color: #fff;
         border: 3px solid  #FF8B94;
         height: 373px;
-        width: 926px;
-        margin: 97px 254px 104px 357px;
+        width: 996px;
+        margin: 97px 254px 104px 280px;
         align-self:center;
         border-radius: 50px;
         display: flex;
@@ -296,17 +327,35 @@ a:hover{
 .banner_extrato span{
     font-size: 20px;
 }
+.btn_doar_nov{
+    background-color: #fff;
+    border: 3px solid  #A8E6CF;
+    border-radius: 10px;
+    color: #747272;
+    font-size: 20px;
+}
+.btn_doar_nov:hover{
+    background-color: #A8E6CF;
+    color: #747272;
+}
+
+
+
 
 
 /* TELA CADASTRO*/
 .banner_cadastro{
     background-color: #fff;
-    height: 432px;
-    width: 643px;
-    margin: 42px 254px 104px 427px;
+    height: 496px;
+    width: 737px;
+    margin: 41px 257px 47px 430px;
     align-self:center;
     display: flex;
+    border: 3px solid  #FF8B94;
+    border-radius: 50px;
+    box-shadow: 1px 1px 6px;
 }
+
 .banner_cadastro .container{
     text-align: center;
     flex-direction: column; 
@@ -317,7 +366,7 @@ a:hover{
 .banner_cadastro .container input{
     border-radius: 10px;
     border: 1px;
-    width: 200px;
+    width: 250px;
     height: 26px;
     margin: 0 auto;
     border: 3px solid  #A8E6CF;
@@ -337,6 +386,7 @@ a:hover{
 .btn_cadastar:hover{
     background-color: #FF8B94;
     color: #747272;
+    transform: translateX(10px) scale(1.2);
 }
 .banner_cadastro p{
     font-size: 50px;
@@ -494,3 +544,123 @@ a:hover{
     margin-left: 259px;
 }
 
+
+/*TELA FEEDBACK*/
+.dash-right .avisos {
+    width: 100%;
+    /* border: 3px solid pink; */
+    color: #747272;
+  }
+  
+  .dash-right .avisos .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dash-right .avisos .container .div-form {
+    width: 100%;
+  }
+  
+  .dash-right .avisos .container .div-form #form_postagem {
+    width: 100%;
+  }
+  
+  .dash-right .avisos .div-form label {
+    width: 100%;
+  }
+  
+  .dash-right .avisos .div-form input {
+    width: 100%;
+    border-radius: 5px;
+    border: 3px solid #A8E6CF;
+  }
+  
+  .dash-right .avisos .div-form textarea {
+    width: 100%;
+    /* color: #E6005A; */
+    border: 3px solid #A8E6CF;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+ .enviar_btn {
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 15px;
+    color: white;
+    background-color: #FF8B94;
+    width: 120px;
+  }
+.enviar_btn:hover{
+    background-color: #FF8B94;
+    color: #747272;
+    transform: translateX(10px) scale(1.2);
+}
+  
+  .publicacao-btn-editar {
+    cursor: pointer;
+    font-family: "Exo 2", sans-serif;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 5px 8px;
+    color: white;
+    background-color: #e6005a;
+    width: 80px;
+  }
+  /* .avisos .container{
+      display: flex;
+  } */
+  .avisos .container h1{
+    font-size: 50px;
+    font-weight: lighter;
+    color: #D3BEDD;
+    margin: 20px 6px;
+  }
+  .avisos .container .sub{
+    align-items: center;
+    color: #747272;
+    font-size: 20px;
+    margin-left: 317px;
+}
+  .hello h2{
+    margin-left: 292px; 
+  }
+  .publicacao {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    border-bottom: 3px solid #e6005a;
+    padding: 20px;
+  }
+  
+  .publicacao > *:not(:last-child) {
+    padding: 0 0 10px 0;
+  }
+  
+  .div-results {
+    width: 100%;
+  }
+  
+  .div-results .feed-container {
+    background-color: #ffffff;
+    margin-bottom: 80px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #747272;
+  }
+  
+ .publicacao span{
+    font-size: 20px;
+  }
+  .publicacao .publicacao-descricao{
+    font-size: 20px;
+  }
+  

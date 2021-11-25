@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XXXX - Sua Doação </title>
-    <link rel="stylesheet" href="style.css">
+    <title>Doem | Sua Doação </title>
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <script src="./js/funcoes.js"></script>
 
-    <link rel="shortcut icon" href="./images/image 17.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/image 4.png" type="image/x-icon">
     
     <link rel = "preconnect" href = "https://fonts.googleapis.com">
     <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
@@ -17,9 +19,7 @@
 
     <div class="header">
         <div class="container">
-            <!-- <img src=" " alt="imagem logo " class="imagelogo"> -->
-            
-            <span>XXXX</span>
+            <img src="./images/image 3.png " alt="imagem logo " class="imagelogo">
             <ul class="navbar">
                 <li> <a href="./index.html"> HOME </a> </li>
                 <li> <a href="./instituicoes.html"> INSTITUIÇÕES </a> </li>
@@ -61,7 +61,7 @@
         </div>
     </div>
     <div class="div_botao">
-       <button onclick="doar_agora()" class="btn_doar"> Doar, agora! </button>
+       <button onclick="cadastar_doar_agora()" class="btn_doar"> Doar, agora! </button>
     </div>
 </div>
 
@@ -73,6 +73,7 @@
                 <p>Tipo de doação:<span id="msg_tipo" ></span></p>
                 <p>Instituição:<span id="msg_instituicao" ></span></p>
                 <p>Muito obrigado(a) pela singela doação nós e todas as crianças agradecemos!!</p>
+                <center> <button onclick="doar_novamente()" class="btn_doar_nov"> DOAR, Novamente! </button></center>
             </div>
     </div>
 
@@ -82,10 +83,11 @@
     <div class="container">
         <span>Todos os direitos reservados a XXX ©2021 </span>
         <div class="div_img_footer">
-            <img src="./facebook-square-brands.svg" alt="logo instagram" >
-            <img src="./instagram-brands.svg " alt="logo facebook" >
-            <img src="./twitter-brands.svg " alt="logo twitter" >
-            <img src="./linkedin-brands.svg " alt="logo linkedIn" >
+            <img src="./images/instagram.png" alt="logo instagram" >
+            <img src="./images/logotipo-do-aplicativo-do-facebook.png" alt="logo facebook" >
+            <img src="./images/whatsapp (1).png" alt="logo WhatsApp" >
+            <img src="./images/twitter.png " alt="logo twitter" >
+            <img src="./images/logotipo-do-linkedin.png" alt="logo linkedIn" >
         </div>
     </div>
 </div>
@@ -93,10 +95,14 @@
 </body>
 </html>
 <script>
-    function doar_agora() {
-        var valor = Number (ipt_valor.value);
+    function cadastar_doar_agora() {
+        var valorVar = Number (ipt_valor.value);
+        var tipo_doacaoVar = tipo_doacao.value;
+        var instituicaoVar = instituicao.value;
+        var ax_totalVar
 
-        if (valor == '') {
+
+        if (valorVar == '') {
             alert('Digite um valor para doar!');
         }
         else if (tipo_doacao.value == '') {
@@ -109,7 +115,7 @@
             if (tipo_doacao.value == 'Mensal') {
                 tela01.style.display='none';
                 tela02.style.display='block';
-                msg_valor_doado.innerHTML = `<b>R$${valor.toFixed(2)} </b>`;
+                msg_valor_doado.innerHTML = `<b>R$${valorVar.toFixed(2)} </b>`;
                 msg_tipo.innerHTML = `<b>${tipo_doacao.value} </b>`;
                 msg_instituicao.innerHTML = `<b>${instituicao.value} </b>`;
             }
@@ -117,9 +123,9 @@
                 tela01.style.display='none';
                 tela02.style.display='block';
 
-                ax_valor = valor * 6;
+                ax_totalVar = valorVar * 6;
 
-                msg_valor_doado.innerHTML = `<b>R$${ax_valor.toFixed(2)} 6x de R$ ${valor.toFixed(2)} </b>`;
+                msg_valor_doado.innerHTML = `<b>R$${ax_totalVar.toFixed(2)} 6x de R$ ${valorVar.toFixed(2)} </b>`;
                 msg_tipo.innerHTML = `<b>${tipo_doacao.value} </b>`;
                 msg_instituicao.innerHTML = `<b>${instituicao.value} </b>`;
             }
@@ -127,12 +133,49 @@
                 tela01.style.display='none';
                 tela02.style.display='block';
                 
-                axx_valor = valor * 12;
+                ax_totalVar = valorVar * 12;
 
-                msg_valor_doado.innerHTML = `<b>R$${axx_valor.toFixed(2)} 12x de R$ ${valor.toFixed(2)} </b>`;
+                msg_valor_doado.innerHTML = `<b>R$${ax_totalVar.toFixed(2)} 12x de R$ ${valorVar.toFixed(2)} </b>`;
                 msg_tipo.innerHTML = `<b>${tipo_doacao.value} </b>`;
                 msg_instituicao.innerHTML = `<b>${instituicao.value} </b>`;
             }
         }
+    
+
+        fetch("/doacao/cadastar_doar_agora", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                valorServer:  valorVar,
+                tipo_doacaoServer: tipo_doacaoVar,
+                instituicaoServer: instituicaoVar,
+                ax_totalServer: ax_totalVar,
+                idUsuarioServer: sessionStorage.getItem('ID_USUARIO')
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");  
+                limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
     }
+
+    function doar_novamente() {
+        tela01.style.display='block';
+        tela02.style.display='none';
+    }
+    
 </script>
