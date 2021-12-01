@@ -7,6 +7,7 @@ body{
 }
 *{
     z-index: 1;
+    box-sizing:border-box
 }
 
 /*NAV BAR*/
@@ -212,6 +213,8 @@ a:hover{
     justify-content: center;
     align-items: center;
     margin: 11px 0 0 72px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 6px;
 }
 .banner_sua_doacao .titulo02{
     color: #FF8B94 ;
@@ -232,13 +235,40 @@ a:hover{
     transform: translateX(10px) scale(1.2);
 }
 
+/* CARROSEL
+.index_body_sua_doacao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+}
+.banner_index_sua_doacao{
+    box-shadow: 2px 2px 4px #747272;
+    overflow: hidden;
+    height: 500px;
+    width: 800px;
+}
+.container_carrosel_sua_doacao{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0);
+}
+.container_carrosel_sua_doacao img{
+    object-fit: cover;
+    height: 500px;
+    max-width: auto;
+} */
+
+
+  
 
 
 
 /*TELA DOAR AGORA*/
 .banner_doar_agora{
     background-color: #fff;
-    height: 438px;
+    height: 375px;
     width: 1512px;
     margin-bottom: 10px;
     /* justify-content: center; */
@@ -302,7 +332,7 @@ a:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 52px;
+    margin-bottom: 124px;
 }
 .banner_extrato {
         background-color: #fff;

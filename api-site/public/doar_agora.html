@@ -21,10 +21,10 @@
         <div class="container">
             <img src="./images/image 3.png " alt="imagem logo " class="imagelogo">
             <ul class="navbar">
-                <li> <a href="./index.html"> HOME </a> </li>
-                <li> <a href="./instituicoes.html"> INSTITUIÇÕES </a> </li>
                 <li class="selecionado"> <button onclick="doar_agora()" class="btn_doar_agora"> DOAR, AGORA </button></li>
                 <li> <a href="./sua_doacao.html"> SUA DOAÇÃO </a></li>
+                <li> <a href="./feedback.html"> FEEDBACKS </a></li>
+                <li> <a href="/index.html"> <button onclick="doar_agora()" class="btn_doar_agora"> SAIR </button></a></li>
             </ul>
         </div> 
     </div>
@@ -68,7 +68,7 @@
 <div id="tela02" style="display: none;">
         <div class="banner_extrato">
             <div class="container">
-                <h1>EXTRATO DA DOAÇÃO?</h1>
+                <h1>EXTRATO DA DOAÇÃO!</h1>
                 <p>Valor doado:<span id="msg_valor_doado"></span></p>
                 <p>Tipo de doação:<span id="msg_tipo" ></span></p>
                 <p>Instituição:<span id="msg_instituicao" ></span></p>
@@ -81,7 +81,7 @@
 
 <div class="footer">
     <div class="container">
-        <span>Todos os direitos reservados a XXX ©2021 </span>
+        <span>Todos os direitos reservados a  DOEM ©2021 </span>
         <div class="div_img_footer">
             <img src="./images/instagram.png" alt="logo instagram" >
             <img src="./images/logotipo-do-aplicativo-do-facebook.png" alt="logo facebook" >
@@ -101,7 +101,6 @@
         var instituicaoVar = instituicao.value;
         var ax_totalVar
 
-
         if (valorVar == '') {
             alert('Digite um valor para doar!');
         }
@@ -115,6 +114,9 @@
             if (tipo_doacao.value == 'Mensal') {
                 tela01.style.display='none';
                 tela02.style.display='block';
+
+                ax_totalVar = valorVar;
+
                 msg_valor_doado.innerHTML = `<b>R$${valorVar.toFixed(2)} </b>`;
                 msg_tipo.innerHTML = `<b>${tipo_doacao.value} </b>`;
                 msg_instituicao.innerHTML = `<b>${instituicao.value} </b>`;
@@ -159,11 +161,11 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Cadastro realizado com sucesso!");  
+                window.alert("Doação realizada com sucesso!");  
                 limparFormulario();
                 // finalizarAguardar();
             } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
+                throw ("Houve um erro ao tentar realizar a doação!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
@@ -176,6 +178,10 @@
     function doar_novamente() {
         tela01.style.display='block';
         tela02.style.display='none';
+
+        tipo_doacao.value = '';
+        ipt_valor.value ='';
+        instituicao.value='';
     }
     
 </script>

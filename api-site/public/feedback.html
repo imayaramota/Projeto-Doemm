@@ -26,10 +26,16 @@
             <div class="container">
                 <img src="./images/image 3.png " alt="imagem logo " class="imagelogo">
                 <ul class="navbar">
-                    <li> <a href="./index.html"> HOME </a> </li>
-                    <li> <a href="./instituicoes.html"> INSTITUIÇÕES </a> </li>
                     <li> <a href="/doar_agora.html"> <button onclick="doar_agora()" class="btn_doar_agora"> DOAR, AGORA </button></a></li>
                     <li><a href="./sua_doacao.html"> SUA DOAÇÃO </a></li>
+                    <li> <a href="./feedback.html"> FEEDBACKS </a></li>
+
+
+
+
+
+                    ,
+                    <li> <a href="/index.html"> <button onclick="doar_agora()" class="btn_doar_agora"> SAIR </button></a></li>
                 </ul>
             </div> 
         </div>
@@ -42,7 +48,7 @@
                 <div class="container">
                     <h1>Publique seu Feedback:</h1>
                     <span class="sub">
-                        Nos de o seu feedback e incentive outros doadores.
+                        Nos dê o seu feedback e incentive outros doadores.
                     </span> 
                     
                     <div class="hello">
@@ -54,13 +60,13 @@
                             <label>
                                 Título:
                                 <br>
-                                <input name="titulo" id="titulo" maxlength="100" type="text">
+                                <input name="titulo" id="titulo" maxlength="100" type="text" placeholder=" Título">
                             </label>
                             <br><br>
                             <label>
                                 Descrição (máximo de 250 caracteres):
                                 <br>
-                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
+                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5" placeholder="Conte sua experiência com a DOEM"></textarea>
                             </label>
                             <br><br>
                             <button class="enviar_btn">Enviar</button>
@@ -73,23 +79,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-            <!-- MODAL -->
-            <!-- <div id="div_modal" class="div-modal">
-                <div id="modal_backdrop" onclick="fecharModal()" class="modal-backdrop">
-                </div>
-                <div id="modal_container" class="modal-container">
-                    <button class="btn-fechar-modal" onclick="fecharModal()">X</button>
-                </div>
-            </div> -->
-
-            <!-- AGUARDAR -->
-            <!-- <div id="div_aguardar" class="div-aguardar">
-                <img src="./assets/aguarde-pink3.gif" id="img_aguarde">
-            </div>  -->
 
         </div>
     </div>
@@ -125,7 +114,7 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
+                window.alert("Feedback realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
                 window.location = "feedback.html";
                 limparFormulario();
                 // finalizarAguardar();
@@ -178,7 +167,7 @@
 
                         // criando e manipulando elementos do HTML via JavaScript
                         var divPublicacao = document.createElement("div");
-                        var spanID = document.createElement("span");
+                        // var spanID = document.createElement("span");
                         var spanTitulo = document.createElement("span");
                         var spanNome = document.createElement("span");
                         var divDescricao = document.createElement("div");
@@ -187,7 +176,7 @@
                         // var btnDeletar = document.createElement("button");
 
 
-                        spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
+                        // spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
                         spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
                         spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
                         divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
@@ -195,7 +184,7 @@
                         // btnDeletar.innerHTML = "Deletar";
 
                         divPublicacao.className = "publicacao";
-                        spanTitulo.id = "inputNumero" + publicacao.idAviso;
+                        // spanTitulo.id = "inputNumero" + publicacao.idAviso;
                         spanNome.className = "publicacao-nome";
                         spanTitulo.className = "publicacao-titulo";
                         divDescricao.className = "publicacao-descricao";
@@ -210,7 +199,7 @@
                         // btnDeletar.id = "btnDeletar" + publicacao.idAviso;
                         // btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
 
-                        divPublicacao.appendChild(spanID);
+                        // divPublicacao.appendChild(spanID);
                         divPublicacao.appendChild(spanNome);
                         divPublicacao.appendChild(spanTitulo);
                         divPublicacao.appendChild(divDescricao);
